@@ -32,6 +32,12 @@ function GetAnsibleIndent(lnum)
       return 0
     endif
   endif
+
+  " 2018-12-13: [lb]: Don't indent my comments, geez!
+  if getline('.') =~ '^#'
+    return 0
+  endif
+
   let prevlnum = prevnonblank(a:lnum - 1)
   let maintain = indent(prevlnum)
   let increase = maintain + &sw
