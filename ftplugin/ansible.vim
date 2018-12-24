@@ -53,3 +53,5 @@
 "
 "   set path+=./../templates,./../files,templates,files
 
+set indentexpr=
+
